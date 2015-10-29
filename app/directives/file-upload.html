@@ -1,0 +1,14 @@
+<div>
+	<span ng-show="!uploading" class="btn btn-success fileinput-button" style="position:relative">
+		<i class="glyphicon glyphicon-upload"></i>
+		<span>Upload</span>
+		<input type="file" name="files[]" ng-disabled="disabled" style="position: absolute; top: 0; left: 0; width: 100%; display: block; height: 100%; margin: 0; opacity: 0; -ms-filter: 'alpha(opacity=0)'; cursor: pointer;">
+	</span>
+	<div ng-show="uploading">
+		<uib-progressbar class="progress-striped active" value="progress" type="success"><b>{{progress}}%</b></uib-progressbar>
+	</div>
+	<div style="margin-top:20px">
+		<div ng-if="videoProcessing">Loading Video...</div>
+		<div ng-if="videoId && !videoProcessing" id="wistia_{{videoId}}" class="wistia_embed"></div>
+	</div>
+</div>
